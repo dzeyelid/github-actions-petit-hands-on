@@ -1,0 +1,22 @@
+name: "[dzeyelid] CIワークフロー"
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # リポジトリをチェックアウト
+      - uses: actions/checkout@v4
+
+      # [課題] Node.js v20の環境をセットアップする
+
+      # [課題] Nuxt.jsアプリケーションのパッケージをインストールする
+
+      # [課題] Nuxt.jsアプリケーションをビルドする
+
+      # [課題] Nuxt.jsアプリケーションのテストを実行する
