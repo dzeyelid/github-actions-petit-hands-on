@@ -1,4 +1,4 @@
-name: "[<アカウント名>] CIワークフロー"
+name: "shu CIワークフロー"
 
 on:
   pull_request:
@@ -14,9 +14,27 @@ jobs:
       - uses: actions/checkout@v4
 
       # [課題] Node.js v20の環境をセットアップする
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
       # [課題] Nuxt.jsアプリケーションのパッケージをインストールする
+      # appディレクトリで実行する
+      - name: Install Nuxt.js application packages
+        run: |
+          npm ci
+        working-directory: app
 
       # [課題] Nuxt.jsアプリケーションをビルドする
+      - name: Build Nuxt.js application
+        run: |
+          npx playwright install --with-deps
+          npm run build
+        working-directory: app
 
       # [課題] Nuxt.jsアプリケーションのテストを実行する
+      - name: Test Nuxt.js application
+        run: |
+          npm run e2e
+        working-directory: app
