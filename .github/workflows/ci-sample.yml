@@ -1,4 +1,4 @@
-name: "shu CIワークフロー"
+name: "[shu] CIワークフロー"
 
 on:
   pull_request:
