@@ -29,12 +29,12 @@ jobs:
       # [課題] Nuxt.jsアプリケーションをビルドする
       - name: Build Nuxt.js application
         run: |
-          npx playwright install --with-deps
           npm run build
         working-directory: app
 
       # [課題] Nuxt.jsアプリケーションのテストを実行する
       - name: Test Nuxt.js application
         run: |
+          npx playwright install --with-deps
           npm run e2e
         working-directory: app
